@@ -52,7 +52,7 @@ const menuSections = [
       'Chicharrón de pollo',
       'Salchipollo',
       'Salchipapa',
-      'Mixtico',
+      'Mostrito',
       'Chuleta de cerdo c/ guarnición',
     ],
   },
