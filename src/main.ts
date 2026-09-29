@@ -148,7 +148,7 @@ const menuSections = [
   },
 ]
 
-const dishImages = Array.from({ length: 14 }, (_, index) => {
+const dishImages = Array.from({ length: 22 }, (_, index) => {
   const number = String(index + 1).padStart(2, '0')
   return `/images/plato-${number}.jpg`
 })
@@ -217,6 +217,8 @@ const dishesHtml = dishImages
   )
   .join('')
 
+const videoFiles = ["video1.mp4", "video2.mp4", "video3.mp4"]
+const videosHtml = videoFiles.map((src, index) => `<article class="video-card"><video src="/images/${src}" controls playsinline preload="metadata" aria-label="Video de Sabores del Océano ${index + 1}"></video></article>`).join("")
 const promosHtml = promoImages
   .map(
     (src, index) => `
@@ -340,6 +342,19 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
           ${dishesHtml}
         </div>
       </section>
+      <section class="videos-section section" id="videos">
+        <div class="section-heading centered">
+          <span class="eyebrow">EXPERIENCIA</span>
+          <h2>Viví Sabores del Océano</h2>
+          <div class="gold-divider"></div>
+          <p>Descubrí nuestra cocina y algunos de nuestros momentos en video.</p>
+        </div>
+
+        <div class="video-grid">
+          ${videosHtml}
+        </div>
+      </section>
+
 
       <section class="menu-section section" id="menu">
         <div class="section-heading centered">
@@ -407,15 +422,11 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
               <span class="contact-symbol">◷</span>
               <div>
                 <small>HORARIOS</small>
-                <strong>12:00 – 16:00</strong>
-                <strong>19:00 – 23:00</strong>
-              </div>
-            </div>
-
-            <div class="contact-item">
-              <span class="contact-symbol">✦</span>
-              <div>
+                <strong>Lunes: 12:00 – 16:30</strong>
+                <strong>Martes a domingo: 12:00 – 23:00</strong>
                 <small>DELIVERY</small>
+                <strong>12:00 – 16:00</strong>
+                <strong>19:30 – 23:00</strong>
                 <strong>Disponible</strong>
               </div>
             </div>
